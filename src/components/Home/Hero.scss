@@ -1,0 +1,33 @@
+@import '../../style/_variables.scss';
+
+.hero {
+
+    &__title {
+        height: 200px;
+        overflow: hidden;
+        
+        & h1 {
+            font-size: $home-h1-font-size;
+            line-height: $home-h1-font-size;
+
+        }
+
+        & p {
+            padding: 13px 0;
+            
+        }
+
+    }
+
+    &__image {
+        width: 100%;
+        height: 700px;
+        overflow: hidden;
+        @include align-center;
+
+        & img {
+            width: 100%;
+        }
+    }
+
+}

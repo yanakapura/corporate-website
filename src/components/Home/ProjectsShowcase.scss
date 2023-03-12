@@ -1,0 +1,26 @@
+@import "../../style/variables";
+
+.projects {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    height: $home-h1-font-size;
+
+    & h2 {
+      align-self: end;
+    }
+
+    &-link {
+      align-self: center;
+      overflow: hidden;
+
+      & .link {
+        font-weight: 600;
+      }
+
+      & span {
+        margin-left: 30px;
+      }
+    }
+  }
+}

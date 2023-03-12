@@ -1,0 +1,13 @@
+$home-h1-font-size: 150px;
+$h1-font-size: 4em;
+$h2-font-size: 2.5em;
+$h3-font-size: 1.5em;
+
+$header-height: 50px;
+
+$padding: 20px 40px;
+
+@mixin align-center {
+    display: flex;
+    align-items: center;
+}

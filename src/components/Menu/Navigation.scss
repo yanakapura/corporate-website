@@ -1,0 +1,59 @@
+@import "../../style/variables.scss";
+
+.menu {
+  display: flex;
+  position: relative;
+  justify-content: flex-end;
+  top: $header-height;
+  height: calc(100vh - $header-height);
+  // overflow: hidden;
+  // width: 100%;
+  // background-color: white;
+
+  // transform: translateY(100%);
+  // transition: 2s ease;
+  
+  // &.open {
+  //   transform: translateY(0%);
+
+  // }
+
+
+  & ul {
+    width: 58%;
+  }
+
+  & li {
+    position: relative;
+    margin-top: 50px;
+  }
+
+  & li:hover &__link {
+    transform: translateX(80px);
+  }
+
+  &__image {
+    height: 80px;
+    width: 80px;
+    overflow: hidden;
+
+    & img {
+      height: 100%;
+    }
+  }
+
+  &__link {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    font-size: 80px;
+    text-transform: uppercase;
+    line-height: 80px;
+
+    background-color: white;
+    padding-left: 2em;
+    transition: 0.5s ease;
+
+  }
+}
