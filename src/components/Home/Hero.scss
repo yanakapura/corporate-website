@@ -3,18 +3,21 @@
 .hero {
 
     &__title {
-        height: 200px;
+        height: 180px;
         overflow: hidden;
+        @include space-between;
         
         & h1 {
             font-size: $home-h1-font-size;
             line-height: $home-h1-font-size;
-
         }
 
         & p {
-            padding: 13px 0;
-            
+            font-size: 3.6em;
+
+            &:first-child {
+                transform: translateY(10px);
+            }
         }
 
     }

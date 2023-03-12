@@ -18,11 +18,26 @@
 
     &:not(:nth-child(3n-2)) {
       height: 700px;
-      
+
       & img {
         height: 100%;
       }
     }
+
+    & img {
+      transition: 0.5s ease;
+      transform: scale(1.01);
+    }
+
+    &:hover img {
+      transform: scale(1.02) !important;
+      filter: blur(0) !important
+    }
+  }
+  
+  &:hover img {
+    transform: scale(1);
+    filter: blur(1px) 
   }
 
   &__info {
@@ -39,6 +54,7 @@
 .info {
   color: white;
   font-weight: 400;
+  transition: .5s ease;
 
   &__title {
     font-weight: 500;
@@ -51,5 +67,15 @@
 
   &__sub {
     margin-top: 10px;
+  }
+
+  .grid:hover & {
+    background-color: rgba(255, 255, 255, 0.25);
+    filter: blur(1px);
+  }
+  
+  .grid__item:hover & {
+    background-color: transparent !important;
+    filter: blur(0) !important;
   }
 }

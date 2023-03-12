@@ -3,30 +3,19 @@ import { Link, useLocation } from "react-router-dom";
 
 import "./Header.scss";
 
-const Header = () => {
-  const location = useLocation();
-
-  const [menuIsOpen, setMenuIsOpen] = useState(false);
-
-  useEffect(() => {
-    if (location.pathname === '/menu') {
-      setMenuIsOpen(true);
-    } else {
-        setMenuIsOpen(false);
-    }
-  }, [menuIsOpen, location]);
+const Header = (props) => {
 
   return (
     <header className="header">
       <div>
-       {!menuIsOpen && <Link to="/projects">Progects</Link>}
+       {!props.menuIsOpen && <Link to="/projects">Progects</Link>}
       </div>
       <div className="header__logo">
         <Link to="/">CM Проект</Link>
       </div>
       <div>
-        {!menuIsOpen && <Link to="/menu">Menu</Link>}
-        {menuIsOpen && <Link to="/">Close</Link>}
+        {!props.menuIsOpen && <Link to="/menu">Menu</Link>}
+        {props.menuIsOpen && <Link to="/">Close</Link>}
         {/* <a >Menu</a> */}
       </div>
     </header>

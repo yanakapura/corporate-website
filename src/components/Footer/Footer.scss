@@ -1,16 +1,17 @@
 @import '../../style/variables.scss';
 
-.header {
+.footer {
     @include space-between;
     text-transform: uppercase;
     font-weight: 500;
-    height: $header-height;
     padding: $padding;
-    padding-bottom: 0;
-
-    width: 100%;
+    align-items: self-end;
 
     &__logo {
         font-size: $logo-size;
+    }
+
+    &__socials a:last-child {
+        margin-left: 30px;
     }
 }

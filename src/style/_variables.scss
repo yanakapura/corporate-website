@@ -1,13 +1,38 @@
-$home-h1-font-size: 150px;
+$home-h1-font-size: 155px;
 $h1-font-size: 4em;
 $h2-font-size: 2.5em;
 $h3-font-size: 1.5em;
+$logo-size: 1.5em;
 
 $header-height: 50px;
 
 $padding: 20px 40px;
+$padding-top: 20px;
+$padding-sides: 40px;
+
+$marging-bg: 200px;
+$marging-md: 100px;
+
+$team-img: 390px;
+$team-grid-gap: 15px;
+
+// $border-hover-color: #08080833; 
+$hover-color: #c2c2c2; 
 
 @mixin align-center {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+}
+@mixin space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin li-border-bottom {
+  display: flex;
+  border-bottom: 2px solid black;
+}
+
+@function image-width() {
+  @return calc((100vw - #{$padding-sides} - #{$team-grid-gap}* 3) / 4);
 }

@@ -1,16 +1,16 @@
-@import "../../style/variables";
+@import "../../../style/variables";
 
 .about-us__list {
     margin: 100px 0 30px;
 
+    
     & li {
-      display: flex;
-      border-top: 1px solid black;
+      @include li-border-bottom;
 
-      &:last-child {
-        border-bottom: 1px solid black;
+      &:first-child {
+        border-top: 1px solid black;
       }
-
+      
       & > div {
         width: 50%;
         display: flex;

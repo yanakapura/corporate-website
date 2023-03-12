@@ -1,0 +1,11 @@
+@import '../../style/variables';
+
+.get-in-touch {
+    text-align: center;
+
+    & span {
+        font-size: $home-h1-font-size;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+}

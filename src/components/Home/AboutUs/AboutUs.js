@@ -2,7 +2,7 @@ import {Link} from 'react-router-dom'
 
 import "./AboutUs.scss";
 
-import img from "../../lib/img2.jpg";
+import img from "../../../lib/img2.jpg";
 import AboutUsList from "./AboutUsList";
 
 const AboutUs = () => {

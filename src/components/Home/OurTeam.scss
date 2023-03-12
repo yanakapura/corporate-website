@@ -1,0 +1,20 @@
+@import '../../style/variables';
+
+.team {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, image-width());
+    gap: $team-grid-gap;
+
+    margin: $marging-bg 0;
+
+    &__member {
+        overflow: hidden;
+        @include align-center;
+
+        & img {
+            width: 100%;
+            filter: grayscale(1);
+        }
+    }
+}

@@ -7,7 +7,10 @@ const Hero = () => {
     <section className="hero">
       <div className="hero__title">
         <h1>СМ ПРОЕКТ</h1>
-        <p>Архитектурно-сторительное бюро</p>
+        <div>
+        <p>Архитектурное бюро</p>
+        <p>Проектная организация</p>
+        </div>
       </div>
       <div className="hero__image">
         <img src={img1} />
