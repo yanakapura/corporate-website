@@ -1,3 +1,5 @@
+@import "../../../style/variables";
+
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -25,7 +27,7 @@
     }
 
     & img {
-      transition: 0.5s ease;
+      transition: $transition-showcase;
       transform: scale(1.01);
     }
 
@@ -37,7 +39,7 @@
   
   &:hover img {
     transform: scale(1);
-    filter: blur(1px) 
+    filter: blur(2px) 
   }
 
   &__info {
@@ -54,7 +56,7 @@
 .info {
   color: white;
   font-weight: 400;
-  transition: .5s ease;
+  transition: $transition-showcase;
 
   &__title {
     font-weight: 500;
@@ -70,7 +72,7 @@
   }
 
   .grid:hover & {
-    background-color: rgba(255, 255, 255, 0.25);
+    background-color: rgba(255, 255, 255, 0.2);
     filter: blur(1px);
   }
   

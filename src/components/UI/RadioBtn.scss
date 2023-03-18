@@ -1,0 +1,16 @@
+@import "../../style/variables";
+
+input[type="radio"] {
+  &.radio-btn {
+    display: none;
+  }
+}
+
+label {
+  cursor: pointer;
+  transition: $transition-short;
+
+  &.active {
+    color: black;
+  }
+}

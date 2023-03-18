@@ -1,0 +1,35 @@
+@import "../../style/variables";
+
+.projects {
+  &__header {
+    @include space-between;
+    align-items: end;
+  }
+
+  &__output-type {
+    text-transform: uppercase;
+    color: $color-passive;
+
+    & > *:last-child {
+      margin-left: 10px;
+    }
+  }
+
+  &__filter ul {
+    display: flex;
+    margin: $marging-sm 0;
+
+    & li {
+      text-transform: uppercase;
+      color: $color-passive;
+
+      &:not(:first-child) {
+        margin-left: 20px;
+      }
+    }
+  }
+}
+
+.active-link {
+  color: black;
+}

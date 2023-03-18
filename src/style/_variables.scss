@@ -1,5 +1,5 @@
 $home-h1-font-size: 155px;
-$h1-font-size: 4em;
+$h1-font-size: 6em;
 $h2-font-size: 2.5em;
 $h3-font-size: 1.5em;
 $logo-size: 1.5em;
@@ -12,12 +12,17 @@ $padding-sides: 40px;
 
 $marging-bg: 200px;
 $marging-md: 100px;
+$marging-sm: 50px;
 
 $team-img: 390px;
 $team-grid-gap: 15px;
 
-// $border-hover-color: #08080833; 
-$hover-color: #c2c2c2; 
+$color-passive:  #c2c2c2;
+
+$transition-showcase: .4s ease;
+$transition-short: .2s ease;
+
+///////////// MIXINS ///////////////
 
 @mixin align-center {
   display: flex;
@@ -32,6 +37,8 @@ $hover-color: #c2c2c2;
   display: flex;
   border-bottom: 2px solid black;
 }
+
+///////////// FUNCTIONS ///////////////
 
 @function image-width() {
   @return calc((100vw - #{$padding-sides} - #{$team-grid-gap}* 3) / 4);

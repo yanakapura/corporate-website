@@ -67,10 +67,10 @@ const ProjectsShowcase = () => {
   ];
 
   return (
-    <section className="projects">
-      <div className="projects__header">
+    <section className="showcase">
+      <div className="showcase__header">
         <h2>Наши работы</h2>
-        <div className="projects__header-link">
+        <div className="showcase__header-link">
           <Link className="link" to='/projects'>
             [всего проектов]<span className="numbers">43</span>
           </Link>

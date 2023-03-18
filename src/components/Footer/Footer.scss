@@ -7,6 +7,10 @@
     padding: $padding;
     align-items: self-end;
 
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+
     &__logo {
         font-size: $logo-size;
     }

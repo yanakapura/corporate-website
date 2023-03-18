@@ -15,6 +15,7 @@ body {
   font-weight: 500;
   position: relative;
   color: black;
+  min-height: 100vh;
 }
 
 a {
@@ -30,7 +31,8 @@ h1 {
   font-size: $h1-font-size;
   font-weight: 600;
   letter-spacing: -1px;
-  line-height: $h1-font-size;
+  line-height: 1em;
+  text-transform: uppercase;
 }
 
 h2 {
@@ -40,8 +42,8 @@ h2 {
 }
 
 h3 {
-    font-size: $h3-font-size;
-    text-transform: uppercase;
+  font-size: $h3-font-size;
+  text-transform: uppercase;
 }
 
 main {
@@ -70,4 +72,8 @@ main {
 span.numbers {
   font-size: $home-h1-font-size;
   font-weight: 400;
+}
+
+.active {
+  color: black;
 }

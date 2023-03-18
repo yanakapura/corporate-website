@@ -9,13 +9,13 @@
         width: 50%;
 
         &:hover > li {
-            border-bottom-color: $hover-color;
-            color: $hover-color;
+            border-bottom-color: $color-passive;
+            color: $color-passive;
         }
     }
     
     & li {
-        transition: .2s ease;
+        transition: $transition-short;
         @include li-border-bottom;
         display: block;
         

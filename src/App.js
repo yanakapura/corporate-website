@@ -14,7 +14,7 @@ function App() {
       element: <Layout />,
       children: [
         { index: true, element: <HomePage /> },
-        { path: "projects", element: <ProjectsPage /> },
+        { path: "projects/*", element: <ProjectsPage /> },
         { path: "projects/:id", element: <SingleProject /> },
         { path: "menu", element: <MenuPage /> },
       ],

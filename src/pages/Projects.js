@@ -1,5 +1,7 @@
+import AllProjects from "../components/Projetcs/AllProjects";
+
 const ProjectsPage = () => {
-    return <h1>ProgectsPage page</h1>
+    return <AllProjects/>
 };
 
 export default ProjectsPage
