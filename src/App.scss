@@ -51,6 +51,16 @@ main {
   padding-top: 0;
 }
 
+button {
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  text-transform: uppercase;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+}
+
 .error {
   color: red;
 }

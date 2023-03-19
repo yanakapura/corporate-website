@@ -1,7 +1,7 @@
-import AllProjects from "../components/Projetcs/AllProjects";
+import ProjectsSection from "../components/Projetcs/ProjectsSection";
 
 const ProjectsPage = () => {
-    return <AllProjects/>
+    return <ProjectsSection/>
 };
 
 export default ProjectsPage

@@ -28,27 +28,35 @@
 
     & img {
       transition: $transition-showcase;
-      transform: scale(1.01);
+      // transform: scale(1.01);
     }
 
     &:hover img {
       transform: scale(1.02) !important;
-      filter: blur(0) !important
+      // filter: blur(0) !important
+    }
+
+    &:hover .grid__info {
+      background-color: rgb(255, 255, 255);
+      color: black;
+      top: 0%;
+      left: 0%;
     }
   }
   
   &:hover img {
     transform: scale(1);
-    filter: blur(2px) 
+    // filter: blur(2px) 
   }
+
 
   &__info {
     position: absolute;
     top: 0;
-    left: 0;
+    left: -100%;
 
     width: 100%;
-    height: 100%;
+    // height: 100%;
     padding: 40px;
   }
 }
@@ -71,13 +79,13 @@
     margin-top: 10px;
   }
 
-  .grid:hover & {
-    background-color: rgba(255, 255, 255, 0.2);
-    filter: blur(1px);
-  }
+  // .grid:hover & {
+  //   background-color: rgba(255, 255, 255, 0.2);
+  //   filter: blur(1px);
+  // }
   
-  .grid__item:hover & {
-    background-color: transparent !important;
-    filter: blur(0) !important;
-  }
+  // .grid__item:hover & {
+  //   background-color: transparent !important;
+  //   filter: blur(0) !important;
+  // }
 }

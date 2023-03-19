@@ -1,21 +1,31 @@
 import { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import {
+  useNavigate,
+  useSearchParams,
+} from "react-router-dom";
 import RadioButton from "../UI/RadioBtn";
 import "./ProjectsHeader.scss";
 
 const ProjectsHeader = () => {
   const navigate = useNavigate();
-  const location = useLocation()
 
   const [layoutSelected, setLayoutSelected] = useState("gallery");
   const [filterSelected, setFilterSelected] = useState("all");
 
-  useEffect(()=>{
-    if (!location.search) {
-      setLayoutSelected('gallery')
-      setFilterSelected('all')
+  let [searchParams] = useSearchParams();
+
+  useEffect(() => {
+    const layout = searchParams.get("layout");
+    const filter = searchParams.get("filter");
+    if (layout && filter) {
+      setLayoutSelected(layout);
+      setFilterSelected(filter);
+    } else {
+      setLayoutSelected("gallery");
+      setFilterSelected("all");
     }
-  },[location])
+  }, []);
+
 
   useEffect(() => {
     navigate("?layout=" + layoutSelected + "&filter=" + filterSelected);

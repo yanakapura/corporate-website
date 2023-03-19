@@ -3,7 +3,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 
-const Layout = () => {
+const Layout = (props) => {
   const location = useLocation();
 
   const [menuIsOpen, setMenuIsOpen] = useState(false);
@@ -20,6 +20,7 @@ const Layout = () => {
     <>
       <Header menuIsOpen={menuIsOpen}/>
       <main >
+        {props.children}
         <Outlet />
       </main>
       {!menuIsOpen && <Footer/>}

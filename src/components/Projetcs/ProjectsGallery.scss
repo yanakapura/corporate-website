@@ -1,0 +1,123 @@
+@import "../../style/variables";
+
+.projects-gallery {
+  display: flex;
+  flex-direction: column;
+
+  &__grid {
+    @include grid-4;
+    // grid-template-rows: repeat(8, 1fr);
+    margin-bottom: $grid-gap;
+
+    & .project {
+      overflow: hidden;
+      //   background-color: grey;
+
+      &__image {
+        height: image-width();
+        overflow: hidden;
+
+        & img {
+          height: 100%;
+          transition: $transition-showcase;
+
+          &:hover {
+            transform: scale(1.01);
+          }
+        }
+      }
+
+      &:nth-child(1) {
+        grid-area: 1 / 1 / 2 / 2;
+      }
+      &:nth-child(2) {
+        grid-area: 1 / 2 / 2 / 3;
+
+        & .project__image {
+          height: calc(#{image-width()} / 2);
+          & img {
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+      &:nth-child(3) {
+        grid-area: 1 / 3 / 3 / 5;
+        @include justify-column-end;
+
+        & .project__image {
+          height: calc(#{image-width()} * 1.5);
+          & img {
+            height: 100%;
+          }
+        }
+      }
+      &:nth-child(4) {
+        grid-area: 3 / 1 / 5 / 3;
+        @include justify-column-end;
+
+        & .project__image {
+          height: calc(#{image-width()} * 2);
+          & img {
+            height: 100%;
+          }
+        }
+      }
+      &:nth-child(5) {
+        grid-area: 4 / 4 / 5 / 5;
+      }
+      &:nth-child(6) {
+        grid-area: 6 / 1 / 7 / 2;
+      }
+      &:nth-child(7) {
+        grid-area: 5 / 2 / 7 / 5;
+        @include justify-column-end;
+
+        & .project__image {
+          height: calc(#{image-width()} * 2);
+          & img {
+            height: 100%;
+          }
+        }
+      }
+      &:nth-child(8) {
+        grid-area: 7 / 1 / 9 / 5;
+        @include justify-column-end;
+
+        & .project__image {
+          height: calc(#{image-width()} * 2);
+          & img {
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+      &:nth-child(9) {
+        grid-area: 9 / 1 / 10 / 2;
+      }
+      &:nth-child(10) {
+        grid-area: 9 / 2 / 10 / 3;
+      }
+    }
+  }
+
+  &__list {
+    &:hover > li {
+      color: $color-passive;
+    }
+
+    & .project {
+        @include li;
+        border-bottom-color: $color-passive;
+
+      & h4 {
+        font-weight: 500;
+      }
+    }
+  }
+
+  &__btn {
+    margin-top: $marging-md;
+    align-self: center;
+  }
+}

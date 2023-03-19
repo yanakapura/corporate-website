@@ -1,0 +1,9 @@
+@import "../../style/variables";
+
+.error-page {
+    height: main-height();
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}

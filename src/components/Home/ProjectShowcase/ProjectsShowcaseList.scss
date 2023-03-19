@@ -9,26 +9,12 @@
         width: 50%;
 
         &:hover > li {
-            border-bottom-color: $color-passive;
             color: $color-passive;
         }
     }
     
     & li {
-        transition: $transition-short;
-        @include li-border-bottom;
-        display: block;
-        
-        & a {
-            @include space-between;
-            display: flex;
-            padding: 20px 0;
-        }
-
-        &:hover {
-            border-bottom-color: black !important;
-            color: black !important;
-        }
-        
+        @include li;
+        border-bottom-color: $color-passive;
     }
 }

@@ -6,6 +6,7 @@ import MenuPage from "./pages/Menu";
 import HomePage from "./pages/Home";
 import ProjectsPage from "./pages/Projects";
 import SingleProject from "./pages/SingleProject";
+import ErrorPage from "./pages/Error";
 
 function App() {
   const router = createBrowserRouter([
@@ -14,10 +15,12 @@ function App() {
       element: <Layout />,
       children: [
         { index: true, element: <HomePage /> },
-        { path: "projects/*", element: <ProjectsPage /> },
+        { path: "projects", element: <ProjectsPage /> },
         { path: "projects/:id", element: <SingleProject /> },
         { path: "menu", element: <MenuPage /> },
+        // { path: "*", element: <ErrorPage /> },
       ],
+      errorElement: <ErrorPage/>
     },
   ]);
 

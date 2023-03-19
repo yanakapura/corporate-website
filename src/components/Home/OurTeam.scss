@@ -1,10 +1,7 @@
 @import '../../style/variables';
 
 .team {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, image-width());
-    gap: $team-grid-gap;
+    @include grid-4;
 
     margin: $marging-bg 0;
 
