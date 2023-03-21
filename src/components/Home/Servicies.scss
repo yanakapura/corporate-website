@@ -1,0 +1,16 @@
+@import "../../style/variables";
+
+.servicies {
+
+    margin-bottom: $marging-bg;
+
+  & ul {
+
+    &:hover > li {
+      color: $color-passive;
+    }
+    & li {
+      @include li;
+    }
+  }
+}

@@ -7,8 +7,8 @@ import Header from "../Header/Header";
 const menuLinks = [
     {name: 'Главная', image: img1, path: '/'},
     {name: 'О нас', image: img1, path: '/about'},
+    {name: 'Услуги', image: img1, path: '/servicies'},
     {name: 'Проекты', image: img1, path: '/projects'},
-    {name: 'Вакансии', image: img1, path: '/careers'},
     {name: 'Контакты', image: img1, path: '/contacts'},
 ]
 

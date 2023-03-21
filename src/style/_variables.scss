@@ -3,6 +3,7 @@ $h1-font-size: 6em;
 $h2-font-size: 2.5em;
 $h3-font-size: 1.5em;
 $logo-size: 1.5em;
+$p-bg: 1.3em;
 
 $header-height: 50px;
 
@@ -19,7 +20,7 @@ $grid-gap: 15px;
 
 $color-passive: #c9c9c9;
 
-$transition-showcase: 0.3s ease;
+$transition-showcase: 0.35s ease-in-out;
 $transition-short: 0.2s ease;
 
 ///////////// MIXINS ///////////////
@@ -40,7 +41,7 @@ $transition-short: 0.2s ease;
 
 @mixin li-border-bottom {
   display: flex;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid $color-passive;
 }
 
 @mixin grid-4 {
@@ -55,22 +56,22 @@ $transition-short: 0.2s ease;
   @include li-border-bottom;
   display: block;
 
-  & a {
+  & > * {
     @include space-between;
     display: flex;
     padding: 20px 0;
   }
 
   &:hover {
-    border-bottom-color: black !important;
+    border-bottom-color: black ;
     color: black !important;
   }
 }
 
 ///////////// FUNCTIONS ///////////////
 
-@function image-width() {
-  @return calc((100vw - #{$padding-sides} - #{$grid-gap}* 3) / 4);
+@function image-width($padding: 0px) {
+  @return calc(((100vw - #{$padding-sides} - #{$grid-gap}* 3) / 4) - #{$padding});
 }
 
 @function height-with-label() {

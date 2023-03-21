@@ -7,6 +7,7 @@ const ProjectsGallery = (props) => {
   const [otherProjects, setOtherProjects] = useState([]);
   const [clickNumber, setClickNumber] = useState(1);
   const [enableBtn, setEnableBtn] = useState(false);
+  // const [changeImage, setCheangeImage] = useState(false);
 
   const filterParam = searchParams.get("filter");
   const layoutParam = searchParams.get("layout");
@@ -16,7 +17,7 @@ const ProjectsGallery = (props) => {
     filteredProjects = props.projects;
   } else {
     filteredProjects = props.projects.filter(
-      (item) => item.status === filterParam
+      (item) => item.category === filterParam
     );
   }
 
@@ -33,13 +34,22 @@ const ProjectsGallery = (props) => {
     return getli(item);
   });
 
+  // function mouseHandler () {
+  //   setCheangeImage(true)
+  // }
+
   function getli(item) {
     if (layoutParam === "gallery") {
       return (
         <li key={item.id} className="projects-gallery__item project">
           <Link to={item.id}>
             <div className="project__image">
-              <img src={item.image} />
+              <div className="project__image-wrapper">
+                <img src={item.image[0]} />
+              </div>
+              <div className="project__image-wrapper">
+                <img src={item.image[1] ? item.image[1] : item.image[0]} />
+              </div>
             </div>
             <h3>{item.name}</h3>
           </Link>
@@ -51,7 +61,7 @@ const ProjectsGallery = (props) => {
         <li key={item.id} className="projects-gallery__item project">
           <Link to={item.id}>
             <h4>{item.name}</h4>
-            <p>{item.status}</p>
+            <p>{item.category}</p>
             <p>{item.id}</p>
           </Link>
         </li>
@@ -139,7 +149,7 @@ const ProjectsGallery = (props) => {
           className="projects-gallery__btn link"
           onClick={loadMoreHandler}
         >
-          Загрузить еще
+          Загрузить еще +
         </button>
       )}
     </div>

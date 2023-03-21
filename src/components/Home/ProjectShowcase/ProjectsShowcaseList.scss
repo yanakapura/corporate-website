@@ -15,6 +15,5 @@
     
     & li {
         @include li;
-        border-bottom-color: $color-passive;
     }
 }

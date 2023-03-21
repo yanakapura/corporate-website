@@ -1,0 +1,62 @@
+@import "../../style/variables";
+
+.project-detail {
+  margin: $marging-bg 0;
+
+  & h1 {
+      margin-bottom: $marging-sm;
+  }
+
+  &__about {
+    display: flex;
+    flex-direction: column;
+
+
+    & h2 {
+      margin-top: $marging-md;
+    }
+  }
+
+  & .about {
+    &__description {
+      width: 50%;
+      align-self: flex-end;
+      margin: 20px 0;
+    }
+
+    &__description th, &__info span {
+        color: $color-passive;
+        font-style: italic;
+        font-weight: 400;
+        font-size: initial;
+        text-align: start;
+    }
+
+    & td {
+        padding-right: 30px;
+    }
+    
+    &__info {
+        font-size: $p-bg;
+        margin: $marging-sm 0;
+
+        & span {
+            margin-right: 30px;
+        }
+    }
+
+    & ul li {
+        @include li;
+        @include space-between;
+
+        &:first-child {
+            border-top: 2px solid $color-passive;
+        }
+
+        &:hover {
+            border-color: $color-passive;
+        }
+
+    }
+  }
+}

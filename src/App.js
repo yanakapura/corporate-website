@@ -15,10 +15,10 @@ function App() {
       element: <Layout />,
       children: [
         { index: true, element: <HomePage /> },
+        { path: "menu", element: <MenuPage /> },
         { path: "projects", element: <ProjectsPage /> },
         { path: "projects/:id", element: <SingleProject /> },
-        { path: "menu", element: <MenuPage /> },
-        // { path: "*", element: <ErrorPage /> },
+        { path: "servicies" },
       ],
       errorElement: <ErrorPage/>
     },

@@ -3,30 +3,31 @@ import ProjectsGallery from "./ProjectsGallery";
 import ProjectsHeader from "./ProjectsHeader";
 
 import img from "../../lib/img1.jpg";
+import img2 from '../../lib/img3.jpg'
 
 const DUMMY_PROJECTS = [
-  { id: "p1", name: "Project 1", status: "in-progress", image: img },
-  { id: "p2", name: "Project 2", status: "completed", image: img },
-  { id: "p3", name: "Project 3", status: "completed", image: img },
-  { id: "p4", name: "Project 4", status: "completed", image: img },
-  { id: "p5", name: "Project 5", status: "in-progress", image: img },
-  { id: "p6", name: "Project 6", status: "completed", image: img },
-  { id: "p7", name: "Project 7", status: "completed", image: img },
-  { id: "p8", name: "Project 8", status: "completed", image: img },
-  { id: "p9", name: "Project 9", status: "in-progress", image: img },
-  { id: "p10", name: "Project 10", status: "completed", image: img },
-  { id: "p11", name: "Project 11", status: "completed", image: img },
-  { id: "p12", name: "Project 12", status: "completed", image: img },
-  { id: "p13", name: "Project 13", status: "completed", image: img },
-  { id: "p14", name: "Project 14", status: "in-progress", image: img },
-  { id: "p15", name: "Project 15", status: "completed", image: img },
-  { id: "p16", name: "Project 16", status: "completed", image: img },
-  { id: "p17", name: "Project 17", status: "completed", image: img },
-  { id: "p18", name: "Project 18", status: "completed", image: img },
-  { id: "p19", name: "Project 19", status: "in-progress", image: img },
-  { id: "p20", name: "Project 20", status: "completed", image: img },
-  { id: "p21", name: "Project 21", status: "completed", image: img },
-  { id: "p22", name: "Project 22", status: "completed", image: img },
+  { id: "p1", name: "Project 1", category: "non-residential", image: [img, img2] },
+  { id: "p2", name: "Project 2", category: "non-residential", image: [img, img2] },
+  { id: "p3", name: "Project 3", category: "residential", image: [img] },
+  { id: "p4", name: "Project 4", category: "non-residential", image: [img, img2] },
+  { id: "p5", name: "Project 5", category: "industrial", image: [img, img2] },
+  { id: "p6", name: "Project 6", category: "industrial", image: [img, img2] },
+  { id: "p7", name: "Project 7", category: "non-residential", image: [img, img2] },
+  { id: "p8", name: "Project 8", category: "industrial", image: [img, img2] },
+  { id: "p9", name: "Project 9", category: "non-residential", image: [img, img2] },
+  { id: "p10", name: "Project 10", category: "non-residential", image: [img, img2] },
+  { id: "p11", name: "Project 11", category: "non-residential", image: [img, img2] },
+  { id: "p12", name: "Project 12", category: "residential", image: [img, img2] },
+  { id: "p13", name: "Project 13", category: "non-residential", image: [img, img2] },
+  { id: "p14", name: "Project 14", category: "residential", image: [img, img2] },
+  { id: "p15", name: "Project 15", category: "industrial", image: [img, img2] },
+  { id: "p16", name: "Project 16", category: "non-residential", image: [img, img2] },
+  { id: "p17", name: "Project 17", category: "non-residential", image: [img, img2] },
+  { id: "p18", name: "Project 18", category: "industrial", image: [img, img2] },
+  { id: "p19", name: "Project 19", category: "non-residential", image: [img, img2] },
+  { id: "p20", name: "Project 20", category: "non-residential", image: [img, img2] },
+  { id: "p21", name: "Project 21", category: "residential", image: [img, img2] },
+  { id: "p22", name: "Project 22", category: "non-residential", image: [img, img2] },
 ];
 
 const ProjectsSection = () => {

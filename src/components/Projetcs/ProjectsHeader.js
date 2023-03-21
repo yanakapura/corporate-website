@@ -1,31 +1,36 @@
 import { useEffect, useState } from "react";
-import {
-  useNavigate,
-  useSearchParams,
-} from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import RadioButton from "../UI/RadioBtn";
 import "./ProjectsHeader.scss";
 
 const ProjectsHeader = () => {
-  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
 
   const [layoutSelected, setLayoutSelected] = useState("gallery");
   const [filterSelected, setFilterSelected] = useState("all");
 
-  let [searchParams] = useSearchParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const layout = searchParams.get("layout");
     const filter = searchParams.get("filter");
-    if (layout && filter) {
-      setLayoutSelected(layout);
-      setFilterSelected(filter);
-    } else {
-      setLayoutSelected("gallery");
-      setFilterSelected("all");
-    }
-  }, []);
 
+    const layoutIsOk = layout === 'list' || layout === 'gallery'
+    const filterIsOk = filter === "all" || filter === 'residential' || filter === 'non-residential' || filter === 'industrial'
+
+    if (layoutIsOk) {
+        setLayoutSelected(layout);
+    } else {
+        setLayoutSelected("gallery");
+    }
+
+    if (filterIsOk) {
+      setFilterSelected(filter)
+    } else {
+      setFilterSelected('all')
+    }
+
+  }, []);
 
   useEffect(() => {
     navigate("?layout=" + layoutSelected + "&filter=" + filterSelected);
@@ -51,8 +56,11 @@ const ProjectsHeader = () => {
 
   const filter = [
     { value: "all", title: "Все" },
-    { value: "in-progress", title: "В процессе" },
-    { value: "completed", title: "Законченные" },
+    { value: "residential", title: "Проектирование жилых зданий" },
+    { value: "non-residential", title: "Проектирование нежилых объектов" },
+    { value: "industrial", title: "Промышленное проектирование" },
+    // { value: "in-progress", title: "В процессе" },
+    // { value: "completed", title: "Законченные" },
   ];
 
   const filterBtns = filter.map((item) => (

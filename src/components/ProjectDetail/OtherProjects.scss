@@ -1,0 +1,12 @@
+@import '../../style/variables';
+
+.project-detail__swiper-sub swiper {
+    &-container {
+        height: image-width(20px);
+    }
+
+    &-slide {
+        background-color: grey;
+    }
+
+}

@@ -6,23 +6,35 @@
 
   &__grid {
     @include grid-4;
-    // grid-template-rows: repeat(8, 1fr);
     margin-bottom: $grid-gap;
 
     & .project {
       overflow: hidden;
-      //   background-color: grey;
 
       &__image {
-        height: image-width();
+        height: image-width($grid-gap);
         overflow: hidden;
+        position: relative;
 
         & img {
           height: 100%;
-          transition: $transition-showcase;
+        }
 
-          &:hover {
-            transform: scale(1.01);
+        &-wrapper {
+          width: 100%;
+          height: 100%;
+          transition: $transition-short;
+
+          &:last-child {
+            position: absolute;
+            top: 0;
+            z-index: -1;
+          }
+        }
+
+        &:hover .project__image-wrapper {
+          &:first-child {
+            opacity: 0;
           }
         }
       }
@@ -34,9 +46,10 @@
         grid-area: 1 / 2 / 2 / 3;
 
         & .project__image {
-          height: calc(#{image-width()} / 2);
+          height: calc(#{image-width($grid-gap)} / 2);
           & img {
-            width: 100%;
+            width: image-width();
+            // width: 100%;
             height: auto;
           }
         }
@@ -46,7 +59,7 @@
         @include justify-column-end;
 
         & .project__image {
-          height: calc(#{image-width()} * 1.5);
+          height: calc(#{image-width($grid-gap)} * 1.5);
           & img {
             height: 100%;
           }
@@ -57,7 +70,7 @@
         @include justify-column-end;
 
         & .project__image {
-          height: calc(#{image-width()} * 2);
+          height: calc(#{image-width($grid-gap)} * 2);
           & img {
             height: 100%;
           }
@@ -74,9 +87,10 @@
         @include justify-column-end;
 
         & .project__image {
-          height: calc(#{image-width()} * 2);
+          height: calc(#{image-width($grid-gap)} * 2);
           & img {
-            height: 100%;
+            width: 100%;
+            height: auto;
           }
         }
       }
@@ -85,7 +99,7 @@
         @include justify-column-end;
 
         & .project__image {
-          height: calc(#{image-width()} * 2);
+          height: calc(#{image-width($grid-gap)} * 2);
           & img {
             width: 100%;
             height: auto;
@@ -102,13 +116,10 @@
   }
 
   &__list {
-    &:hover > li {
-      color: $color-passive;
-    }
-
+    
     & .project {
-        @include li;
-        border-bottom-color: $color-passive;
+      @include li;
+      border-bottom-color: $color-passive;
 
       & h4 {
         font-weight: 500;

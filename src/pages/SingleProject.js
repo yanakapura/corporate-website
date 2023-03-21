@@ -1,5 +1,7 @@
+import ProjectDetail from "../components/ProjectDetail/ProjectDetail";
+
 const SingleProject = () => {
-    return <h1>Single progect page</h1>
+    return <ProjectDetail/>
 };
 
 export default SingleProject;
