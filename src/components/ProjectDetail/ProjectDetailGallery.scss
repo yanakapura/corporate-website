@@ -73,14 +73,14 @@
 
       &::before,
       &::after {
-        right: 22%;
+        right: 24%;
       }
 
       &::before {
-        transform: rotate(45deg) translateY(13px);
+        transform: rotate(40deg) translateY(11px);
       }
       &::after {
-        transform: rotate(-45deg) translateY(-13px);
+        transform: rotate(-40deg) translateY(-12px);
       }
     }
     &-next {
@@ -88,14 +88,14 @@
 
       &::before,
       &::after {
-        left: 19%;
+        left: 24%;
       }
 
       &::before {
-        transform: rotate(45deg) translateY(-14px);
+        transform: rotate(40deg) translateY(-12px);
       }
       &::after {
-        transform: rotate(-45deg) translateY(14px);
+        transform: rotate(-40deg) translateY(11px);
       }
     }
   }

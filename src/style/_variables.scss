@@ -23,6 +23,9 @@ $color-passive: #c9c9c9;
 $transition-showcase: 0.35s ease-in-out;
 $transition-short: 0.2s ease;
 
+/* Using SCSS variables to store breakpoints */
+$breakpoint-tablet: 768px;
+
 ///////////// MIXINS ///////////////
 
 @mixin align-center {
@@ -70,8 +73,8 @@ $transition-short: 0.2s ease;
 
 ///////////// FUNCTIONS ///////////////
 
-@function image-width($padding: 0px) {
-  @return calc(((100vw - #{$padding-sides} - #{$grid-gap}* 3) / 4) - #{$padding});
+@function image-width($padding: 0px, $times: 4) {
+  @return calc(((100vw - #{$padding-sides} - #{$grid-gap}* 3) / #{$times}) - #{$padding});
 }
 
 @function height-with-label() {

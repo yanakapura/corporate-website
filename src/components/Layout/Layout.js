@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
+import ScrollToTop from "../UI/ScrollToTop";
 
 const Layout = (props) => {
   const location = useLocation();
@@ -9,21 +10,22 @@ const Layout = (props) => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   useEffect(() => {
-    if (location.pathname === '/menu') {
+    if (location.pathname === "/menu") {
       setMenuIsOpen(true);
     } else {
-        setMenuIsOpen(false);
+      setMenuIsOpen(false);
     }
   }, [menuIsOpen, location]);
 
   return (
     <>
-      <Header menuIsOpen={menuIsOpen}/>
-      <main >
+      <Header menuIsOpen={menuIsOpen} />
+      <main>
+        <ScrollToTop />
         {props.children}
         <Outlet />
       </main>
-      {!menuIsOpen && <Footer/>}
+      {!menuIsOpen && <Footer />}
     </>
   );
 };

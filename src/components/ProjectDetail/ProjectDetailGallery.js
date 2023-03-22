@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 
 import img from "../../lib/img3.jpg";
 
-const ProjectDetailGallery = () => {
+const ProjectDetailGallery = (props) => {
   register();
 
   const swiperElRef = useRef(null);
@@ -20,6 +20,12 @@ const ProjectDetailGallery = () => {
     });
   }, [swiperElRef]);
 
+  const slides = props.images.map((image) => (
+    <swiper-slide key={Math.random()}>
+      <img src={image} />
+    </swiper-slide>
+  ));
+
   return (
     <div className="project-detail__swiper swiper">
       <swiper-container
@@ -30,15 +36,7 @@ const ProjectDetailGallery = () => {
         space-between="20"
         centered-slides="true"
       >
-        <swiper-slide>
-          <img src={img} />
-        </swiper-slide>
-        <swiper-slide>
-          <img src={img} />
-        </swiper-slide>
-        <swiper-slide>
-          <img src={img} />
-        </swiper-slide>
+        {slides}
       </swiper-container>
       <div className="swiper__buttons">
         <button
