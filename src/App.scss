@@ -33,9 +33,11 @@ h1 {
   letter-spacing: -1px;
   line-height: 1em;
   text-transform: uppercase;
+  margin: $marging-bg 0 0;
 }
 
-h2 {
+h2,
+.heading {
   font-size: $h2-font-size;
   font-weight: 600;
   text-transform: uppercase;
@@ -71,6 +73,17 @@ button {
   text-transform: uppercase;
 }
 
+.heading {
+  margin: $marging-bg 0 0;
+}
+
+.content {
+  font-size: $p-bg;
+  text-indent: 4rem;
+  width: 50%;
+  align-self: flex-end;
+}
+
 .fixed {
   position: fixed;
 }
@@ -86,4 +99,21 @@ span.numbers {
 
 .active {
   color: black;
+}
+
+li.active {
+  border-color: black !important;
+  color: black !important;
+
+  & > * {
+    border-color: black !important;
+  }
+  
+  a {
+    font-weight: 700;
+  }
+}
+
+li.passive {
+  color: $color-passive;
 }

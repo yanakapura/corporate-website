@@ -56,17 +56,21 @@ $breakpoint-tablet: 768px;
 
 @mixin li {
   transition: $transition-short;
-  @include li-border-bottom;
   display: block;
-
+  
   & > * {
+    @include li-border-bottom;
     @include space-between;
     display: flex;
     padding: 20px 0;
+
+    &:hover {
+      border-bottom-color: black ;
+
+    }
   }
 
   &:hover {
-    border-bottom-color: black ;
     color: black !important;
   }
 }

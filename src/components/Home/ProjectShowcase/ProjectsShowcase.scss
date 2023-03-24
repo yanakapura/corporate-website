@@ -1,6 +1,7 @@
 @import "../../../style/variables";
 
 .showcase {
+  margin-top: $marging-md;
 
   &__header {
     @include space-between;

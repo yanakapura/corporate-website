@@ -1,0 +1,12 @@
+@import "../../style/variables";
+
+.services {
+  &__header {
+    display: flex;
+    flex-direction: column;
+    .content {
+      margin: $marging-sm 0;
+      
+    }
+  }
+}

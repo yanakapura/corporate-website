@@ -1,0 +1,11 @@
+@import '../../style/variables';
+
+.service-detail {
+    flex-direction: column;
+
+    padding: 30px 0;
+
+    p {
+        margin: 20px 0;
+    }
+}

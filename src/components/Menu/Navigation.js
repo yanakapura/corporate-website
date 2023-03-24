@@ -2,12 +2,11 @@ import { Link } from "react-router-dom";
 import "./Navigation.scss";
 
 import img1 from "../../lib/img1.jpg";
-import Header from "../Header/Header";
 
 const menuLinks = [
     {name: 'Главная', image: img1, path: '/'},
     {name: 'О нас', image: img1, path: '/about'},
-    {name: 'Услуги', image: img1, path: '/servicies'},
+    {name: 'Услуги', image: img1, path: '/services'},
     {name: 'Проекты', image: img1, path: '/projects'},
     {name: 'Контакты', image: img1, path: '/contacts'},
 ]
@@ -26,7 +25,6 @@ const menuItems = menuLinks.map(item=><li key={item.name}>
 
   return (
     <>
-    {/* <Header/> */}
     <nav className="menu">
       <ul>
         {menuItems}

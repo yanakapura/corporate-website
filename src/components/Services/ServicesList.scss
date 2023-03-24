@@ -1,14 +1,15 @@
 @import "../../style/variables";
 
-.servicies {
+.services__list {
 
     margin-bottom: $marging-bg;
 
   & ul {
 
-    &:hover > li {
+    &:hover > li:not(.active) {
       color: $color-passive;
     }
+
     & li {
       @include li;
     }

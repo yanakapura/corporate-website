@@ -1,8 +1,6 @@
 @import "../../style/variables";
 
 .project-detail {
-  margin: $marging-bg 0;
-
   & h1 {
       margin-bottom: $marging-sm;
   }
@@ -11,10 +9,6 @@
     display: flex;
     flex-direction: column;
 
-
-    & h2 {
-      margin-top: $marging-md;
-    }
   }
 
   & .about {
@@ -47,15 +41,14 @@
 
     & ul li {
         @include li;
-        @include space-between;
 
         &:first-child {
             border-top: 2px solid $color-passive;
         }
 
-        &:hover {
-            border-color: $color-passive;
-        }
+        // &:hover {
+        //     // border-color: $color-passive;
+        // }
 
     }
   }
