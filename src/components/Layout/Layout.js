@@ -1,25 +1,17 @@
-import { useEffect, useState } from "react";
-import { Outlet, useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { Outlet } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import ScrollToTop from "../UI/ScrollToTop";
+import Navigation from "../Menu/Navigation";
 
 const Layout = (props) => {
-  const location = useLocation();
-
-  const [menuIsOpen, setMenuIsOpen] = useState(false);
-
-  useEffect(() => {
-    if (location.pathname === "/menu") {
-      setMenuIsOpen(true);
-    } else {
-      setMenuIsOpen(false);
-    }
-  }, [menuIsOpen, location]);
+  const menuIsOpen = useSelector((state) => state.ui.menuIsVisible);
 
   return (
     <>
-      <Header menuIsOpen={menuIsOpen} />
+      <Navigation showMenu={menuIsOpen} />
+      <Header menuIsOpen={menuIsOpen} showMenu={true}/>
       <main>
         <ScrollToTop />
         {props.children}

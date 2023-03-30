@@ -1,6 +1,4 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
-import "./App.scss";
 import Layout from "./components/Layout/Layout";
 import MenuPage from "./pages/Menu";
 import HomePage from "./pages/Home";
@@ -9,7 +7,8 @@ import SingleProject from "./pages/SingleProject";
 import ErrorPage from "./pages/Error";
 import ServicesPage from "./pages/Services";
 import AboutPage from "./pages/About";
-import ServiceDetail from "./components/Services/ServiceDetail";
+
+import "./global.scss";
 
 function App() {
   const router = createBrowserRouter([

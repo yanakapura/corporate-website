@@ -1,23 +1,20 @@
 @import "../../style/variables.scss";
 
 .menu {
-  display: flex;
-  position: relative;
-  justify-content: flex-end;
-  top: $header-height;
-  height: calc(100vh - $header-height);
-  // overflow: hidden;
-  // width: 100%;
-  // background-color: white;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  background-color: white;
+  height: 100vh;
+  top: 0;
 
-  // transform: translateY(100%);
-  // transition: 2s ease;
-  
-  // &.open {
-  //   transform: translateY(0%);
-
-  // }
-
+  nav {
+    display: flex;
+    position: relative;
+    // top: $header-height;
+    justify-content: flex-end;
+    height: calc(100vh - $header-height);
+  }
 
   & ul {
     width: 58%;
@@ -54,6 +51,66 @@
     background-color: white;
     padding-left: 2em;
     transition: 0.5s ease;
+  }
 
+  &-enter-active {
+    animation: openMenu 0.5s ease-out forwards;
+
+    & ~ main,
+    & ~ .header {
+      animation: fadeIn 0.5s ease forwards;
+    }
+  }
+
+  &-exit-active {
+    animation: closeMenu 0.5s ease-out forwards;
+
+    & ~ main,
+    & ~ .header {
+      animation: fadeOut 0.5s ease forwards;
+    }
+  }
+}
+
+@keyframes openMenu {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+@keyframes closeMenu {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    filter: brightness(1);
+    background-color: initial;
+    transform: translateY(0);
+  }
+  100% {
+    filter: brightness(0.5);
+    background-color: rgba(0, 0, 0, 0.5);
+    transform: translateY(-5%);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    filter: brightness(0.5);
+    background-color: rgba(0, 0, 0, 0.5);
+    transform: translateY(5%);
+  }
+  100% {
+    filter: brightness(1);
+    background-color: initial;
+    transform: translateY(0);
   }
 }
