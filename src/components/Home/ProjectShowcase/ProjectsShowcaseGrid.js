@@ -8,7 +8,7 @@ const ProjectsShowcaseGrid = (props) => {
   const gridItems = topProjects.map((item) => (
     <div className="grid__item" key={item.id}>
       <Link to={`projects/${item.id}`}>
-        <img src={item.image} />
+        <img src={item.image[0]} />
         <div className="grid__info info">
           <h3 className="info__title">
             {item.name}

@@ -7,13 +7,11 @@ const uiSlice = createSlice({
     toggleMenu(state) {
       state.menuIsVisible = !state.menuIsVisible;
     },
-    // showNotification(state, action) {
-    //   state.notification = {
-    //     status: action.payload.status,
-    //     title: action.payload.title,
-    //     message: action.payload.message,
-    //   };
-    // },
+    setMenu(state, action) {
+      console.log(action.payload.menuIsVisible);
+      state.menuIsVisible = action.payload.menuIsVisible
+    }
+
   },
 });
 

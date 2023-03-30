@@ -9,9 +9,16 @@ import SingleProject from "./pages/SingleProject";
 import ErrorPage from "./pages/Error";
 import ServicesPage from "./pages/Services";
 import AboutPage from "./pages/About";
-import ServiceDetail from "./components/Services/ServiceDetail";
+import { useSelector } from "react-redux";
+import { CSSTransition } from "react-transition-group";
+import { AnimatePresence } from "framer-motion";
+// import ServiceDetail from "./components/Services/ServiceDetail";
+// import { AnimatedRoute } from "react-router-transition";
 
 function App() {
+  const menuIsOpen = useSelector(state=>state.ui.menuIsVisible)
+
+
   const router = createBrowserRouter([
     {
       path: "/",
@@ -19,6 +26,17 @@ function App() {
       children: [
         { index: true, element: <HomePage /> },
         { path: "menu", element: <MenuPage /> },
+        // {
+        //   path: "menu",
+        //   element: <CSSTransition
+        //   mountOnEnter
+        //   unmountOnExit
+        //   in={menuIsOpen}
+        //   timeout={500}
+        //   classNames="menu"
+        // ><MenuPage /></CSSTransition>
+          
+        // },
         { path: "projects", element: <ProjectsPage /> },
         { path: "projects/:id", element: <SingleProject /> },
         { path: "about", element: <AboutPage /> },
@@ -33,7 +51,7 @@ function App() {
     },
   ]);
 
-  return <RouterProvider router={router} />;
+  return <AnimatePresence><RouterProvider router={router} /></AnimatePresence>;
 }
 
 export default App;

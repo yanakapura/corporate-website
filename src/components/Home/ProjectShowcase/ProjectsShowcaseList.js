@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./ProjectsShowcaseList.scss";
 
 const ProjectsShowcaseList = (props) => {
-  const otherProjects = props.projects.slice(3);
+  const otherProjects = props.projects.slice(3,8);
 
   const projectItems = otherProjects.map((item) => (
     <li key={item.id}>

@@ -2,7 +2,6 @@ import "./ProjectDetailGallery.scss";
 import { register } from "swiper/element/bundle";
 import { useEffect, useRef, useState } from "react";
 
-import img from "../../lib/img3.jpg";
 
 const ProjectDetailGallery = (props) => {
   register();
