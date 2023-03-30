@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import "./Navigation.scss";
-import { motion } from "framer-motion";
 
 import img1 from "../../lib/img1.jpg";
 import { CSSTransition } from "react-transition-group";
@@ -30,22 +29,6 @@ const Navigation = (props) => {
 
   return (
     <>
-      {/* <motion.div  
-      initial={{
-            transform: "translateY(100%)",
-            backgroundColor: "red",
-            transition: { duration: 2 },
-          }}
-          animate={{
-            transform: "translateY(0)",
-            backgroundColor: "red",
-            transition: { duration: 2 },
-          }}
-          exit={{
-            transform: "translateY(100%)",
-            backgroundColor: "red",
-            transition: { duration: 2 },
-          }}> */}
       <CSSTransition
         mountOnEnter
         unmountOnExit
@@ -60,7 +43,6 @@ const Navigation = (props) => {
           </nav>
         </div>
       </CSSTransition>
-      {/* </motion.div> */}
     </>
   );
 };
