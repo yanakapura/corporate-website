@@ -1,4 +1,10 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 
 import "./App.scss";
 import Layout from "./components/Layout/Layout";
@@ -16,42 +22,59 @@ import { AnimatePresence } from "framer-motion";
 // import { AnimatedRoute } from "react-router-transition";
 
 function App() {
-  const menuIsOpen = useSelector(state=>state.ui.menuIsVisible)
+  const menuIsOpen = useSelector((state) => state.ui.menuIsVisible);
 
+  const location = useLocation();
 
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Layout />,
-      children: [
-        { index: true, element: <HomePage /> },
-        { path: "menu", element: <MenuPage /> },
-        // {
-        //   path: "menu",
-        //   element: <CSSTransition
-        //   mountOnEnter
-        //   unmountOnExit
-        //   in={menuIsOpen}
-        //   timeout={500}
-        //   classNames="menu"
-        // ><MenuPage /></CSSTransition>
-          
-        // },
-        { path: "projects", element: <ProjectsPage /> },
-        { path: "projects/:id", element: <SingleProject /> },
-        { path: "about", element: <AboutPage /> },
-        {
-          path: "services",
-          element: <ServicesPage />,
-          // children: [{ index: true, element: <ServiceDetail /> }],
-        },
-        { path: "services/:id", element: <ServicesPage /> },
-      ],
-      errorElement: <ErrorPage />,
-    },
-  ]);
+  return (
+    <AnimatePresence>
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<Layout />} errorElement={<ErrorPage />}>
+          <Route index element={<HomePage />} />
+          <Route path="menu" element={<MenuPage />} />
+          <Route path="projects" element={<ProjectsPage />} />
+          <Route path="projects/:id" element={<SingleProject />} />
+          <Route path="about" element={<AboutPage />} />
+        </Route>
+      </Routes>
+    </AnimatePresence>
+  );
 
-  return <AnimatePresence><RouterProvider router={router} /></AnimatePresence>;
+  // const router = createBrowserRouter([
+  //   {
+  //     path: "/",
+  //     element: <Layout />,
+  //     location: location,
+  //     key: location.pathname,
+  //     children: [
+  //       { index: true, element: <HomePage /> },
+  //       { path: "menu", element: <MenuPage /> },
+  //       // {
+  //       //   path: "menu",
+  //       //   element: <CSSTransition
+  //       //   mountOnEnter
+  //       //   unmountOnExit
+  //       //   in={menuIsOpen}
+  //       //   timeout={500}
+  //       //   classNames="menu"
+  //       // ><MenuPage /></CSSTransition>
+
+  //       // },
+  //       { path: "projects", element: <ProjectsPage /> },
+  //       { path: "projects/:id", element: <SingleProject /> },
+  //       { path: "about", element: <AboutPage /> },
+  //       {
+  //         path: "services",
+  //         element: <ServicesPage />,
+  //         // children: [{ index: true, element: <ServiceDetail /> }],
+  //       },
+  //       { path: "services/:id", element: <ServicesPage /> },
+  //     ],
+  //     errorElement: <ErrorPage />,
+  //   },
+  // ]);
+
+  // return <AnimatePresence><RouterProvider router={router} /></AnimatePresence>;
 }
 
 export default App;

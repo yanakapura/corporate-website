@@ -46,20 +46,17 @@ const Navigation = (props) => {
             backgroundColor: "red",
             transition: { duration: 2 },
           }}> */}
-      <CSSTransition
+      {/* <CSSTransition
         mountOnEnter
         unmountOnExit
         in={props.showMenu}
         timeout={500}
         classNames="menu"
-      >
-        <div className="menu">
-          <Header showMenu={false}/>
-          <nav>
+      > */}
+          <nav className="menu">
             <ul>{menuItems}</ul>
           </nav>
-        </div>
-      </CSSTransition>
+      {/* </CSSTransition> */}
       {/* </motion.div> */}
     </>
   );

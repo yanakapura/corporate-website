@@ -14,26 +14,26 @@ const MenuPage = () => {
         timeout={500}
         classNames="menu"
       > */}
-      {/* <motion.div
+      <motion.div
         className="menu-wrapper"
         initial={{
             transform: "translateY(100%)",
-            backgroundColor: "red",
-            transition: { duration: .5, timingFunction: 'ease' },
+            // backgroundColor: "red",
+            transition: { duration: 1, timingFunction: 'ease' },
           }}
           animate={{
             transform: "translateY(0)",
-            backgroundColor: "red",
-            transition: { duration: .5, timingFunction: 'ease' },
+            // backgroundColor: "yellow",
+            transition: { duration: 1, timingFunction: 'ease' },
           }}
           exit={{
-            transform: "translateY(100%)",
-            backgroundColor: "black",
-            transition: { duration: .5, timingFunction: 'ease' },
+            transform: "translateY(-30%)",
+            // backgroundColor: "black",
+            transition: { duration: .7, timingFunction: 'ease' },
           }}
-      > */}
+      >
         <Navigation />
-      {/* </motion.div> */}
+      </motion.div>
       {/* </CSSTransition> */}
     </>
   );
