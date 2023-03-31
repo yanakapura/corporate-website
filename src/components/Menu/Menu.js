@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
-import "./Navigation.scss";
+import { CSSTransition } from "react-transition-group";
+import { useDispatch } from "react-redux";
+import { uiActions } from "../../store/ui-slice";
+import Header from "../Header/Header";
+
+import "./Menu.scss";
 
 import img1 from "../../lib/img1.jpg";
-import { CSSTransition } from "react-transition-group";
-import Header from "../Header/Header";
 
 const menuLinks = [
   { name: "Главная", image: img1, path: "/" },
@@ -13,14 +16,20 @@ const menuLinks = [
   { name: "Контакты", image: img1, path: "/contacts" },
 ];
 
-const Navigation = (props) => {
+const Menu = (props) => {
+  const dispatch = useDispatch();
+
+  const linkClickHandler = () => {
+    dispatch(uiActions.setMenu({ menuIsOpen: false }));
+  };
+
   const menuItems = menuLinks.map((item) => (
     <li key={item.name}>
       <div className="menu__image">
         <img src={item.image} />
       </div>
       <div className="menu__link">
-        <Link to={item.path} replace>
+        <Link to={item.path} replace onClick={linkClickHandler}>
           {item.name}
         </Link>
       </div>
@@ -37,7 +46,7 @@ const Navigation = (props) => {
         classNames="menu"
       >
         <div className="menu">
-          <Header showMenu={false}/>
+          <Header showMenu={false} />
           <nav>
             <ul>{menuItems}</ul>
           </nav>
@@ -47,4 +56,4 @@ const Navigation = (props) => {
   );
 };
 
-export default Navigation;
+export default Menu;

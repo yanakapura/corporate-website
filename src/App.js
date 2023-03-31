@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
-import MenuPage from "./pages/Menu";
+// import MenuPage from "./pages/Menu";
 import HomePage from "./pages/Home";
 import ProjectsPage from "./pages/Projects";
 import SingleProject from "./pages/SingleProject";
@@ -17,7 +17,6 @@ function App() {
       element: <Layout />,
       children: [
         { index: true, element: <HomePage /> },
-        { path: "menu", element: <MenuPage /> },
         { path: "projects", element: <ProjectsPage /> },
         { path: "projects/:id", element: <SingleProject /> },
         { path: "about", element: <AboutPage /> },

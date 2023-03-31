@@ -7,7 +7,6 @@ const ProjectsGallery = (props) => {
   const [otherProjects, setOtherProjects] = useState([]);
   const [clickNumber, setClickNumber] = useState(1);
   const [enableBtn, setEnableBtn] = useState(false);
-  // const [changeImage, setCheangeImage] = useState(false);
 
   const filterParam = searchParams.get("filter");
   const layoutParam = searchParams.get("layout");
@@ -33,10 +32,6 @@ const ProjectsGallery = (props) => {
   const projects = projectsArr[0].map((item) => {
     return getli(item);
   });
-
-  // function mouseHandler () {
-  //   setCheangeImage(true)
-  // }
 
   function getli(item) {
     if (layoutParam === "gallery") {

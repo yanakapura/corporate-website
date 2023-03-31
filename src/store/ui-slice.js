@@ -1,17 +1,15 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const uiSlice = createSlice({
-  name: 'ui',
-  initialState: { cartIsVisible: false, menuIsVisible: false},
+  name: "ui",
+  initialState: { cartIsVisible: false, menuIsOpen: false },
   reducers: {
-    toggleMenu(state) {
-      state.menuIsVisible = !state.menuIsVisible;
-    },
+    // toggleMenu(state) {
+    //   state.menuIsOpen = !state.menuIsOpen;
+    // },
     setMenu(state, action) {
-      console.log(action.payload.menuIsVisible);
-      state.menuIsVisible = action.payload.menuIsVisible
-    }
-
+      state.menuIsOpen = action.payload.menuIsOpen;
+    },
   },
 });
 

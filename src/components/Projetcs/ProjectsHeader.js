@@ -1,40 +1,44 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import RadioButton from "../UI/RadioBtn";
 import "./ProjectsHeader.scss";
 
 const ProjectsHeader = () => {
-  const [searchParams] = useSearchParams();
-
   const [layoutSelected, setLayoutSelected] = useState("gallery");
   const [filterSelected, setFilterSelected] = useState("all");
 
+  const [searchParams] = useSearchParams();
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const layout = searchParams.get("layout");
     const filter = searchParams.get("filter");
 
-    const layoutIsOk = layout === 'list' || layout === 'gallery'
-    const filterIsOk = filter === "all" || filter === 'residential' || filter === 'non-residential' || filter === 'industrial'
+    const layoutIsOk = layout === "list" || layout === "gallery";
+    const filterIsOk =
+      filter === "all" ||
+      filter === "residential" ||
+      filter === "non-residential" ||
+      filter === "industrial";
 
     if (layoutIsOk) {
-        setLayoutSelected(layout);
+      setLayoutSelected(layout);
     } else {
-        setLayoutSelected("gallery");
+      setLayoutSelected("gallery");
     }
 
     if (filterIsOk) {
-      setFilterSelected(filter)
+      setFilterSelected(filter);
     } else {
-      setFilterSelected('all')
+      setFilterSelected("all");
     }
-
   }, []);
 
   useEffect(() => {
-    navigate("?layout=" + layoutSelected + "&filter=" + filterSelected);
-  }, [layoutSelected, filterSelected]);
+      navigate("?layout=" + layoutSelected + "&filter=" + filterSelected, 
+      { replace: true });
+  }, [layoutSelected, filterSelected, location.search]);
 
   const layout = [
     { value: "gallery", title: "Галерея" },
