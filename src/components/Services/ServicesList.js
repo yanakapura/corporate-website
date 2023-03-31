@@ -31,16 +31,20 @@ const ServicesList = () => {
   const { id } = useParams();
   const prevRoute = useLocation();
 
-  const services = DUMMY_SERVICIES.map((item) => (
-      <li key={item.id} className={id && (id === item.name ? "active" : "passive")}>
-        <Link
-          to={id === item.name ? "/services" : `/services/${item.name}`}
-          state={{ prevRoute }}
-        >
-          {item.title}
-        </Link>
-        {id === item.name && <ServiceDetail service={item} />}
-      </li>
+  const services = DUMMY_SERVICIES.map((item, index) => (
+    // <CSSTransition key={index} classNames="list-item" timeout={500}>
+    <li
+      key={item.id}
+      className={id && (id === item.name ? "active" : "passive")}
+    >
+      <Link
+        to={id === item.name ? "/services" : `/services/${item.name}`}
+        state={{ prevRoute }}
+      >
+        {item.title}
+      </Link>
+      <ServiceDetail service={item} show={id === item.name} />
+    </li>
   ));
 
   return (

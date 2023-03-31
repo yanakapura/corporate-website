@@ -8,10 +8,10 @@ const Header = (props) => {
   const dispatch = useDispatch();
 
   const openMenu = () => {
-    dispatch(uiActions.setMenu({ menuIsVisible: true }));
+    dispatch(uiActions.setMenu({ menuIsOpen: true }));
   };
   const closeMenu = () => {
-    dispatch(uiActions.setMenu({ menuIsVisible: false }));
+    dispatch(uiActions.setMenu({ menuIsOpen: false }));
   };
 
   return (

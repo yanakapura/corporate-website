@@ -1,11 +1,9 @@
 @import "../../style/variables";
 
 .services__list {
-
-    margin-bottom: $marging-bg;
+  margin-bottom: $marging-bg;
 
   & ul {
-
     &:hover > li:not(.active) {
       color: $color-passive;
     }
@@ -15,3 +13,4 @@
     }
   }
 }
+

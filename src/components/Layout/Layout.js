@@ -1,17 +1,18 @@
 import { useSelector } from "react-redux";
 import { Outlet } from "react-router-dom";
-import Footer from "../Footer/Footer";
+import Menu from "../Menu/Menu";
 import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
+
 import ScrollToTop from "../UI/ScrollToTop";
-import Navigation from "../Menu/Navigation";
 
 const Layout = (props) => {
-  const menuIsOpen = useSelector((state) => state.ui.menuIsVisible);
-
+  const menuIsOpen = useSelector((state) => state.ui.menuIsOpen);
+  
   return (
     <>
-      <Navigation showMenu={menuIsOpen} />
-      <Header menuIsOpen={menuIsOpen} showMenu={true}/>
+      <Menu showMenu={menuIsOpen} />
+      <Header showMenu={true}/>
       <main>
         <ScrollToTop />
         {props.children}
