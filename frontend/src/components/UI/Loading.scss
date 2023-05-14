@@ -1,0 +1,9 @@
+@import "../../style/variables";
+
+.loading {
+    width: 100%;
+    height: main-height();
+    @include align-center;
+    flex-direction: column;
+    justify-content: center;
+}
